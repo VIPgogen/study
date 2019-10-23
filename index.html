@@ -1,111 +1,121 @@
+
 <!DOCTYPE html>
-<html lang="ru">
+<html>
 <head>
-    <meta charset="UTF-8"/>
-    <title>VIPggn</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap&subset=cyrillic" rel="stylesheet"/>
-    <style>
-     body {
-         background-image: url(bg.jpg);
-         background-position: center;
-         background-repeat: no-repeat;
-         background-size: 100%;
-         }
-         </style>
-    <style>
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-        }
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Любимые команды</title>
+<style>
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
 
-        body {
-            margin: 0;
-            font-family: "Roboto", sans-serif;
-            font-size: 16px;
-            line-height: 1.8;
-        }
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin-top: 25px;
+  margin-left: 450px;
+}
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
 
-        .page {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            height: 100vh;
-            max-width: 750px;
-            margin: 0 auto;
-            padding: 30px;
-        }
+.active, .dot:hover {
+  background-color: #717171;
+}
 
-        .page__header {
-            margin-bottom: 20px;
-        }
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
 
-        .page__header .photo {
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
-            overflow: hidden;
-        }
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
 
-        .page__header .photo img {
-            width: 420px;
-            margin-left: -51px;
-        }
-
-        .page__header .title {
-            text-align: center;
-            margin-top: 40px;
-            line-height: 1.2;
-        }
-
-        h1 {
-            font-weight: 700;
-            font-size: 50px;
-            margin-bottom: 10px;
-        }
-
-        .title__occupation {
-            font-size: 21px;
-        }
-
-        .page__body {
-            margin-bottom: 20px;
-        }
-
-        .page__footer {
-            text-align: left;
-            font-weight: 500;
-        }
-    </style>
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+</style>
 </head>
-<body> 
-<div class="page">
-    <div class="page__header">
-        <div class="photo">
-            <img src="228.jpg" style="position:absolute;top:20px">
-        </div>
-        <div class="title">
-            <h1>VIP gogen</h1>
-            <div class="title__occupation">
-                Крокодайл
-            </div>
-        </div>
-    </div>
-    <div class="page__body"
-    
-    
-        
-     <ul>
-            <li>Смотрю много плохого кино</li> 
-            <li>Пью кофе литрами</li>
-            <li></li>
-        </ul>
-    </div>
-    <div class="page__footer">
-        Телега для связи  @ilikyan
-    </div>
+<body>
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <img src="bk.png" width="450" height="450">
 </div>
-</body>
+
+<div class="mySlides fade">
+  <img src="mu.png" width="450" height="450">
+</div>
+
+<div class="mySlides fade">
+  <img src="vc.jpg" width="450" height="450">
+</div>
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+<style>
+        .text {
+         text-align:  center;
+        }
+       </style>
+      </head>
+      <body>
+       <div class="text">
+          <p><h1>Немного обо мне</h1></p>
+      <li>  Люблю баскетбол</li>
+      <li> Смотрю много плохого кино </li>
+      <li> Съедаю 3 хурмы в день </li>
+    
+       </div>
+      </body>
 </html>
